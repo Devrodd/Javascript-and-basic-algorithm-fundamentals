@@ -15,17 +15,20 @@ Functions / funcoes
 
 
 */
-function digaMeunome() {
-    const name = 'Rodrigo'
-    console.log(name)
+function digaMeunome(nome) {
+    console.log(nome);
     
 }
 
-digaMeunome() //Pode ser reutilizada varias vezes
+digaMeunome("Rodrigo"); //Pode ser reutilizada varias vezes
 
+digaMeunome("carlos");
 
+digaMeunome("Bernardo");
 
+digaMeunome("Marcio");
 
+// Parâmetros
 
 
 // Outros exemplos
@@ -58,4 +61,94 @@ function mostarPreco(preco) {
     console.log("Preco = " + preco)
     
 }
+
+function areaCirculo(raio) {
+        var pi = 3.14;
+        return pi * raio * raio
+}
+
+// Function hoisting: função no js são "movidas" para cima pelo
+
+teste(10);
+
+function teste(x) {
+    console.log("Teste = " * x);
+    
+}
+
+// funcoes podem ser passadas como argumentos
+
+function triplo(num) {
+    return num * 3;
+}
+
+function aplicar(f, num) {
+    const result = f(num);
+    console.log("Resultado = " + result);
+}
+
+aplicar(triplo, 10);
+aplicar(dobro, 20);
+
+// Funçoes de alta Ordem
+
+const list1 = [1, 2, 3, 4];
+const list2 = [];
+const nomes = ['Maria', 'Joao', 'Toinho'];
+
+// Map
+
+function dobro(x) {
+    return x * 2;
+}
+
+function triplo(x) {
+    return x * 3;
+}
+
+const m1 = list1.map(dobro);
+const m2 = list1.map(triplo);
+const m3 = list1.map(x => x * 2);
+
+console.log("MAP ----------------");
+console.log(m1);
+console.log(m2);
+console.log(m3);
+
+
+// Filter
+
+function par(x) {
+    return x % 2 == 0;
+}
+
+// Retornando valor par
+
+const f1 = list1.filter(par);
+const f2 = list1.filter(x => x % 2 == 0);
+const f3 = list1.filter(x => x > 2);
+
+console.log(f1);
+console.log(f2);
+console.log(f3);
+
+//Reduce
+
+function sum(x , y) {
+    return x + y;
+}
+
+function produto(x, y) {
+    return x * y;
+}
+
+const r1 = list1.reduce(sum);
+const r2 = list2.reduce(sum, 0);
+const r3 = list1.reduce(produto, 1);
+
+console.log("Reduce ----------------------");
+console.log(r1);
+console.log(r2);
+console.log(r3);
+
 
