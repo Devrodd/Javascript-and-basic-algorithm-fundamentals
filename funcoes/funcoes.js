@@ -123,6 +123,7 @@ function par(x) {
 }
 
 // Retornando valor par
+console.log("Filter -----------------------------")
 
 const f1 = list1.filter(par);
 const f2 = list1.filter(x => x % 2 == 0);
@@ -151,4 +152,5 @@ console.log(r1);
 console.log(r2);
 console.log(r3);
 
+// Function sort: 
 
